@@ -1,20 +1,27 @@
 ---
-import xiaomiPhoto from "../assets/img/projects/xiaomi2.png";
 import githubIcon from "../assets/icon/github.svg";
 import arrowUpIcon from "../assets/icon/arrow-up-right.svg";
+import projectData from '../services/docs/projects.json';
 
+export interface Props {
+  name: string;
+  url: string;
+  image: string;
+  github: string;
+}
 
+const { name, image, url, github } = Astro.props;
 
 ---
 
 <a class="relative rounded-lg bg-[#454545] w-48 h-64 overflow-hidden" href="#">
     <div class="absolute [&>A]:hover:translate-y-0 [&>A]:hover:opacity-100">
-        <a class="translate-y-6 opacity-0 z-10 absolute top-4 right-4 w-4 h-4 transition-all duration-500" href="">
-            <img class="absolute w-4 h-4 invert" src={githubIcon?.src} alt="#">
+        <a class="translate-y-6 opacity-0 z-10 absolute top-4 right-4 size-4 transition-all duration-500" href={github}>
+            <img class="absolute size-4 invert" src={githubIcon?.src} alt={name}>
         </a>    
-        <a class="translate-y-6 opacity-0 z-10 absolute top-10 right-4 w-4 h-4 transition-all duration-500" href="">
-            <img class="absolute w-4 h-4 invert" src={arrowUpIcon?.src} alt="#">
+        <a class="translate-y-6 opacity-0 z-10 absolute top-10 right-4 size-4 transition-all duration-500" href={url}>
+            <img class="absolute size-4 invert" src={arrowUpIcon?.src} alt="">
         </a>
-        <img class="z-1 w-48 h-64 object-cover rounded-lg transition-all duration-500 scale-95 hover:scale-100 grayscale hover:grayscale-0" src={xiaomiPhoto.src} alt="#">
+        <img class="z-1 w-48 h-64 object-cover rounded-lg transition-all duration-500 scale-95 hover:scale-100 grayscale hover:grayscale-0" src={image} alt="#">
     </div>    
-</a>    
+</a>

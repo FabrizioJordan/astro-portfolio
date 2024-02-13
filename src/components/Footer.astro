@@ -1,4 +1,35 @@
 ---
-
+import logo from '../assets/icon/icon1.svg';
 import linkedinIcon from "../assets/icon/linkedin.svg";
+import githubIcon from "../assets/icon/github.svg";
+import dribbbleIcon from "../assets/icon/dribbble.svg";
 ---
+
+
+<footer class="w-full flex flex-col gap-4">
+    <div class=" flex flex-row justify-between gap-12">
+        <ul>
+            <a href=""><img class="w-8 h-8 invert hover:invert-[.65]" src={logo?.src} alt="Svg of a planet with rings."></a>
+        </ul>
+        <nav class="flex flex-row gap-4 justify-center items-center [&>A]:text-[#9f968a] hover:[&>A]:text-[#ffffff]">
+            <a class="" href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/skills">Skills</a>
+        </nav>
+    </div>
+    
+    <hr class="border-[#57575799]">
+
+    <div class="flex flex-row justify-between items-start gap-12">
+        <a class="flex flex-col justify-center" href="mailto:fabriorange28@gmail.com?subject=Hello%20Fabricio!%20...">fabriorange28@gmail.com   
+            <span class="text-[#9f968a] hover:text-[#ffffff]">Montevideo, Uruguay</span>
+        </a>
+        <a class="hover:text-[#9f968a]" href="">Back to top</a>
+        <ul class="flex flex-row gap-4 [&_IMG]:invert [&_IMG]:size-4 hover:[&_IMG]:invert-[.65]">
+            <a href=""><img src={linkedinIcon.src} alt=""></a>
+            <a href=""><img src={githubIcon.src} alt=""></a>
+            <a href=""><img src={dribbbleIcon.src} alt=""></a>
+        </ul>   
+    </div>
+</footer>
