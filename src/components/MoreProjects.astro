@@ -1,31 +1,13 @@
 ---
 import MiniProject from "./MiniProject.astro";
-//import projectData from '../services/docs/projects.json';
+import projects from '../services/docs/projects.json';
 
+let Projects = projects.Projects
 
-//for (var i = 0; i < projectData.length; i++) {
-    //console.log(projectData[i]  )
-//  }
-  let projectData =[
-    {
-        "name": "Xiaomi Fake Page",
-        "image": "/src/assets/img/projects/xiaomi2.png",
-        "url": "https://xiaomi-page.vercel.app",
-        "github": "https://github.com/FabrizioJordan/xiaomiPage/"
-    },
-    {
-        "name": "Portafolio personal",
-        "image": "/src/assets/img/projects/xiaomi1.png",
-        "url": "https://fabiriciojordan.vercel.app",
-        "github": "https://github.com/FabrizioJordan/prototypePortfolio1"
-    },
-    {
-        "name": "Xiaomi Fake Page",
-        "image": "/src/assets/img/projects/xiaomi1.png",
-        "url": "https://fabiriciojordan.vercel.app",
-        "github": "https://github.com/FabrizioJordan/prototypePortfolio1"
-    }
-]
+for (var i = 0; i < Projects.length; i++) {
+    console.log(Projects[i]  )
+}
+
 --- 
 
 <section class="flex flex-col gap-4">
@@ -37,7 +19,7 @@ import MiniProject from "./MiniProject.astro";
   </hgroup>
   <ul class="flex flex-row gap-2 flex-wrap">
     { 
-      projectData.map(({ name, image, url, github }) => (
+      Projects.map(({ name, image, url, github }) => (
         <MiniProject
           name={name}
           image={image}

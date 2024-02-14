@@ -1,20 +1,22 @@
-[
+{
+  "Projects": [
     {
-        "name": "Xiaomi Fake Page",
-        "image": "/src/assets/img/projects/xiaomi2.png",
-        "url": "https://xiaomi-page.vercel.app",
-        "github": "https://github.com/FabrizioJordan/xiaomiPage/"
+      "name": "Xiaomi Fake Page",
+      "image": "/src/assets/img/projects/xiaomi2.png",
+      "url": "https://xiaomi-page.vercel.app",
+      "github": "https://github.com/FabrizioJordan/xiaomiPage/"
     },
     {
-        "name": "Portafolio personal",
-        "image": "/src/assets/img/projects/xiaomi1.png",
-        "url": "https://fabiriciojordan.vercel.app",
-        "github": "https://github.com/FabrizioJordan/prototypePortfolio1"
+      "name": "Portafolio personal",
+      "image": "/src/assets/img/projects/xiaomi1.png",
+      "url": "https://fabiriciojordan.vercel.app",
+      "github": "https://github.com/FabrizioJordan/prototypePortfolio1"
     },
     {
-        "name": "Xiaomi Fake Page",
-        "image": "/src/assets/img/projects/xiaomi1.png",
-        "url": "https://fabiriciojordan.vercel.app",
-        "github": "https://github.com/FabrizioJordan/prototypePortfolio1"
+      "name": "Xiaomi Fake Page",
+      "image": "/src/assets/img/projects/xiaomi1.png",
+      "url": "https://fabiriciojordan.vercel.app",
+      "github": "https://github.com/FabrizioJordan/prototypePortfolio1"
     }
-]
+  ]
+}
