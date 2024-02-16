@@ -1,13 +1,6 @@
 ---
 import MiniProject from "./MiniProject.astro";
-import projects from '../services/docs/projects.json';
-
-let Projects = projects.Projects
-
-for (var i = 0; i < Projects.length; i++) {
-    console.log(Projects[i]  )
-}
-
+import projects from "../services/docs/projects.json";
 --- 
 
 <section class="flex flex-col gap-4">
@@ -19,7 +12,7 @@ for (var i = 0; i < Projects.length; i++) {
   </hgroup>
   <ul class="flex flex-row gap-2 flex-wrap">
     { 
-      Projects.map(({ name, image, url, github }) => (
+      projects.map(({ name, image, url, github }) => (
         <MiniProject
           name={name}
           image={image}

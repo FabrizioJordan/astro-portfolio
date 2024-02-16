@@ -4,7 +4,7 @@ import MoreProjects from '../components/MoreProjects.astro';
 import linkedinIcon from "../assets/icon/linkedin.svg";
 import githubIcon from "../assets/icon/github.svg";
 import clipboardIcon from "../assets/icon/clipboard-fill.svg";
-
+import uruguayFlag from "../assets/icon/uruguayFlag.svg";
 ---
 
 <Layout title="Fabricio Jordán Portfolio | FrontEnd Developer">
@@ -29,8 +29,8 @@ import clipboardIcon from "../assets/icon/clipboard-fill.svg";
 			<article class="text-start min-w-full flex flex-col justify-center items-start gap-2 md:gap-2">
 				<header class="inline-flex flex-col sm:flex-row items-start sm:items-center justify-center gap-1 sm:gap-4">
 					<h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Fabricio Jordán</h1>
-					<a class="inline-flex items-end border border-[#ffffff5c] hover:border-[#22c55e] rounded-lg px-2 py-1 transition-colors duration-500 hover:bg-[#572e9b5c]" href="#">
-						<p>Resumee</p> <img class="hidden sm:block w-3 h-3 invert mt-2.5 m-auto" src={} alt="svg de una flecha hacia la derecha">
+					<a class="inline-flex items-end hover:underline underline-offset-4 decoration-2 transition-all duration-500" href="#">
+						<p>Resumee</p>
 					</a>
 				</header>
 				<article class="min-w-full flex flex-col sm:flex-row items-start sm:items-center gap-2">
@@ -40,10 +40,9 @@ import clipboardIcon from "../assets/icon/clipboard-fill.svg";
 
 			<article class="max-w-3xl w-full min-w-full flex flex-col gap-4 items-start justify-center">
 				<header>
-					<p class="max-w-lg">Hola!! Soy Fabricio, aunque la gente suele llamarme Jordan (por Michael
-						Jordan y
-						mi apellido).
-						Soy un Uruguayo de 19 años.</p>
+					<p class="max-w-lg">Hola!! Soy Fabricio, aunque la gente suele llamarme Jordan. 
+						</p>
+						<p class="max-w-lg">Soy un <span class="text-[#3474ff]">Uruguayo</span><img class="size-5 rounded-md inline ml-1" src={uruguayFlag?.src} alt=""> de 19 años.</p>
 					<p>Y tengo <span class="text-[#00ffff] [text-shadow:_2px_2px_0_rgb(0_0_0_/_65%)]">+2 Años de
 							experiencia con JavaScript</span>.</p>
 				</header>
