@@ -3,14 +3,14 @@ import MiniProject from "./MiniProject.astro";
 import projects from "../../services/docs/mini-projects.json";
 --- 
 
-<section class="flex flex-col gap-4 max-w-3xl">
+<section id="moreProjects" class="flex flex-col gap-4 max-w-3xl">
   <hgroup>
-    <h2 class="font-semibold">Other projects.</h2>
+    <h2 class="font-semibold">Otros proyectos.</h2>
     <p class="text-[#c9c9c9] font-thin">
-      The rest of the projects created by me or in which I participated.
+      El resto de proyectos que fueron creados por mi o en los que participé.
     </p>
   </hgroup>
-  <ul class="flex flex-row gap-2 flex-wrap">
+  <ul class="flex flex-row gap-2 flex-wrap justify-center">
     { 
       projects.map(({ name, image, url, github }) => (
         <MiniProject
