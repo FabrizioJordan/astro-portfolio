@@ -1,0 +1,71 @@
+---
+import linkedinIcon from "../assets/icon/linkedin.svg";
+import clipboardIcon from "../assets/icon/clipboard-fill.svg";
+import uruguayFlag from "../assets/icon/uruguayFlag.svg";
+import githubIcon from "../assets/icon/github.svg";
+---
+
+
+<section id="about" class="w-full flex gap-4 flex-col justify-center items-center leading-7">
+      <article class="text-start min-w-full flex flex-col justify-center items-start gap-2 md:gap-2">
+        <header class="inline-flex flex-col sm:flex-row items-start sm:items-center justify-center gap-1 sm:gap-4">
+          <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">
+            Fabricio Jordán
+          </h1>
+          <a class="inline-flex items-end hover:underline underline-offset-4 decoration-2 transition-all duration-500" href="#"
+          >
+            <p>Resumee</p>
+          </a>
+        </header>
+        <article class="min-w-full flex flex-col sm:flex-row items-start sm:items-center gap-2">
+          <h2 class="text-lg sm:text-2xl">Desarollador Web</h2>
+        </article>
+      </article>
+
+      <article class="max-w-3xl w-full min-w-full flex flex-col gap-4 items-start justify-center">
+        <header class="[&>p]:max-w-lg">
+          <p class="">
+            Hola!! Soy Fabricio, aunque la gente suele llamarme Jordan.
+          </p>
+          <p class="">
+            Soy un <span class="text-[#3474ff]">Uruguayo</span><img
+              class="size-5 rounded-md inline ml-1"
+              src={uruguayFlag?.src}
+              alt=""
+            /> de 19 años.
+          </p>
+          <p>
+            Soñador y amante del estudio, del autodidactismo y de los sistemas GNU/Linux con <span
+              class="text-[#ba5bff] [text-shadow:_2px_2px_0_rgb(0_0_0_/_65%)]"
+              >+2 Años de experiencia con JavaScript</span
+            >.
+          </p>
+        </header>
+        <ul class="flex gap-2 flex-row justify-center items-center text-sm">
+          <li>
+            <p class="transition-colors duration-500 hover:!bg-[#ffffff40] bg-linear-3 gap-2 bg-size-1 animation-1 border border-white rounded-md px-2.5 p-1 flex justify-between items-center">
+              fabriorange28@gmail.com <button onclick="copyMailToClipboard()" ><img class="w-4 h-4 invert" src={clipboardIcon?.src} alt="envelope for click the button and copy the mail into the clipboard"/></button
+              >
+            </p>
+          </li>
+          <li>
+            <a rel="noreferrer noopener" target="_blank" class="transition-colors duration-500 hover:!bg-[#ffffff40] flex gap-2 items-center justify-center bg-linear-3 bg-size-1 animation-1 border border-white rounded-md px-2.5 p-1" href="https://www.linkedin.com/in/fabricio-jordán-936385136/">
+              <span class="hidden sm:block">LinkedIn</span><img
+                class="w-4 h-4 invert"
+                src={linkedinIcon?.src}
+                alt="linkedin icon"
+              />
+            </a>
+          </li>
+          <li>
+            <a rel="noreferrer noopener" target="_blank" class="transition-colors duration-500 hover:!bg-[#ffffff40] flex gap-2 items-center justify-center bg-linear-3 bg-size-1 animation-1 border border-white rounded-md px-2.5 p-1" href="https://github.com/FabrizioJordan">
+              <span class="hidden sm:block">GitHub</span><img
+                class="w-4 h-4 invert"
+                src={githubIcon?.src}
+                alt="github icon"
+              />
+            </a>
+          </li>
+        </ul>
+      </article>
+    </section>

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Prototipo de portafolio personal",
+    "image": "/src/assets/img/projects/mini-projects/prototypePortfolio.png",
+    "url": "https://prototypeportfolio.vercel.app",
+    "github": "https://github.com/FabrizioJordan/prototypePortfolio1"
+  },
+  {
+    "name": "Mause Follower",
+    "image": "/src/assets/img/projects/mini-projects/mouse-follower.png",
+    "url": "https://mouse-follower-three.vercel.app",
+    "github": "https://github.com/FabrizioJordan/03-mouse-follower"
+  }
+]

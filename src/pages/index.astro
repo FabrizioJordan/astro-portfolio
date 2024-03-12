@@ -1,91 +1,104 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import MoreProjects from '../components/MoreProjects.astro';
-import linkedinIcon from "../assets/icon/linkedin.svg";
-import githubIcon from "../assets/icon/github.svg";
-import clipboardIcon from "../assets/icon/clipboard-fill.svg";
-import uruguayFlag from "../assets/icon/uruguayFlag.svg";
+import Layout from "../layouts/Layout.astro";
+import MoreProjects from "../components/projects/MoreProjects.astro";
+import MainProjects from "../components/projects/MainProjects.astro";
+import mainProjectsJSON from "../services/docs/main-projects.json";
+import AboutMe from "../components/AboutMe.astro";
+
+import iconDumbbell from "../assets/icon/dumbbell-solid.svg";
 ---
 
 <Layout title="Fabricio Jordán Portfolio | FrontEnd Developer">
+  <script is:inline>
+    function copyMailToClipboard() {
+      window.location.href = "mailto:fabriorange28@gmail.com";
+      document.getElementById("message").classList.remove("hidden");
+      setTimeout(() => {
+        document.getElementById("message").classList.add("hidden");
+      }, 1000);
+    }
+  </script>
 
-	<script is:inline>
-		function copyMailToClipboard(){
-			window.location.href = "mailto:fabriorange28@gmail.com";
-			document.getElementById("message").classList.remove("hidden");
-			setTimeout(() => {
-				document.getElementById("message").classList.add("hidden");
-			}, 100000);
-		}
-	</script>
+  <main class="flex flex-col gap-16">
+    <div
+      id="message"
+      class="z-50 hidden fixed top-6 w-full max-w-[592px] text-center"
+    >
+      <p
+        class="inline-block m-auto bg-[#505050] tracking-widest p-2 rounded-lg"
+      >
+        Enviando Mail...
+      </p>
+    </div>
 
-	<main class="flex flex-col gap-16">
+    <AboutMe />
 
-		<div id="message" class="z-50 hidden fixed top-6 w-full max-w-[592px] text-center">
-			<p class="inline-block m-auto bg-[#505050] tracking-widest p-2 rounded-lg ">Enviando Mail...</p>
-		</div>
+    <section
+      class="max-w-3xl w-full text-start flex flex-col justify-center items-start gap-12"
+    >
+      <header class="inline-flex justify-start items-end gap-4">
+        <h1 class="text-4xl">Proyectos</h1>
+        <div>
+          <img
+            class="w-8 h-8 invert"
+            src={iconDumbbell?.src}
+            alt="icono de pesa para hacer ejercicio, referencia a mis ejercicios hechos"
+          />
+        </div>
+      </header>
+      <section id="mainProjects" class="flex flex-col justify-center items-start gap-16">
 
-		<section class="w-full flex gap-4 flex-col justify-center items-center leading-7">
-			<article class="text-start min-w-full flex flex-col justify-center items-start gap-2 md:gap-2">
-				<header class="inline-flex flex-col sm:flex-row items-start sm:items-center justify-center gap-1 sm:gap-4">
-					<h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Fabricio Jordán</h1>
-					<a class="inline-flex items-end hover:underline underline-offset-4 decoration-2 transition-all duration-500" href="#">
-						<p>Resumee</p>
-					</a>
-				</header>
-				<article class="min-w-full flex flex-col sm:flex-row items-start sm:items-center gap-2">
-					<h2 class="text-lg sm:text-2xl">Desarollador Web</h2>
-				</article>
-			</article>
+        {
+          mainProjectsJSON.map(
+            ({ name, image, url, github, description, techs }) => (
+              <MainProjects
+                name={name}
+                image={image}
+                url={url}
+                github={github}
+                description={description}
+                techs={techs}
+              />
+            )
+          )
+        }
 
-			<article class="max-w-3xl w-full min-w-full flex flex-col gap-4 items-start justify-center">
-				<header>
-					<p class="max-w-lg">Hola!! Soy Fabricio, aunque la gente suele llamarme Jordan. 
-						</p>
-						<p class="max-w-lg">Soy un <span class="text-[#3474ff]">Uruguayo</span><img class="size-5 rounded-md inline ml-1" src={uruguayFlag?.src} alt=""> de 19 años.</p>
-					<p>Y tengo <span class="text-[#00ffff] [text-shadow:_2px_2px_0_rgb(0_0_0_/_65%)]">+2 Años de
-							experiencia con JavaScript</span>.</p>
-				</header>
-				<ul class="flex gap-2 flex-row justify-center items-center text-sm">
-					<li>
-						<p class="transition-colors duration-500 hover:!bg-[#ffffff40] bg-linear-3 gap-2 bg-size-1 animation-1 border border-white rounded-md px-2.5 p-1 flex justify-between items-center">
-							fabriorange28@gmail.com <button onclick="copyMailToClipboard()"><img class="w-4 h-4 invert" src={clipboardIcon?.src} alt="envelope for click the button and copy the mail into the clipboard"></button>
-						</p>
-					</li>
-					<li><a rel="noreferrer noopener" target="_blank" class="transition-colors duration-500 hover:!bg-[#ffffff40] flex gap-2 items-center justify-center bg-linear-3 bg-size-1 animation-1 border border-white rounded-md px-2.5 p-1" href="https://www.linkedin.com/in/fabricio-jordán-936385136/">
-							<span class="hidden sm:block">LinkedIn</span><img class="w-4 h-4 invert" src={linkedinIcon?.src} alt="linkedin icon">
-						</a></li>
-					<li><a rel="noreferrer noopener" target="_blank" class="transition-colors duration-500 hover:!bg-[#ffffff40] flex gap-2 items-center justify-center bg-linear-3 bg-size-1 animation-1 border border-white rounded-md px-2.5 p-1" href="https://github.com/FabrizioJordan">
-							<span class="hidden sm:block">GitHub</span><img class="w-4 h-4 invert" src={githubIcon?.src} alt="github icon">
-						</a></li>
-				</ul>
-			</article>
-		</section>
+      </section>
+    </section>
 
-		<MoreProjects />
+    <section id="moreProjects">
+      <MoreProjects />
+    </section>
 
-	</main>
+  </main>
+
 </Layout>
 
 <style>
+  .bg-size-1 {
+    background-size: 250% 100% !important;
+  }
+  .bg-linear-3 {
+    background: linear-gradient(
+      110deg,
+      #a4ccb31a,
+      50%,
+      #ffffff66,
+      55%,
+      #a4ccb31a
+    );
+  }
 
-.bg-size-1{
-    background-size: 250% 100%!important;
-}
-.bg-linear-3{
-    background: linear-gradient(110deg,#a4ccb31a,50%,#ffffff66,55%,#a4ccb31a);
-}
+  .animation-1 {
+    animation: background-shine 8s cubic-bezier(0.42, 0, 0.7, 2.19) infinite;
+  }
 
-	.animation-1{
-    	animation: background-shine 8s cubic-bezier(0.42, 0, 0.7, 2.19) infinite;
-	}
-
-	@keyframes background-shine{
-		0% {
-			background-position: 0 0;
-		}
-		100% {
-			background-position: -200% 0;
-		}
-	}
+  @keyframes background-shine {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
 </style>
